@@ -1,0 +1,19 @@
+.Footer {
+  display: flex;
+  justify-content:space-between;
+  font-size: 20px;
+  color: black;
+  border-top: 1px solid black;
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+}
+
+.Footer-item {
+  display:inline-block;
+
+  margin-left: 10px;
+  margin-right: 10px;
+}

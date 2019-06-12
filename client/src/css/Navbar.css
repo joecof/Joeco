@@ -1,0 +1,45 @@
+.Navbar {
+  background-color:white;
+  border: 1px solid black;
+  height:6vh;
+}
+
+.Navbar-ul {
+  list-style:none;
+  width:100%;
+  margin:0px; 
+  padding: 0px;
+
+
+  display: flex;
+  justify-content:space-between;
+  list-style-type: none;
+}
+
+.Navbar-li {
+  font-size: 1.3em;
+  text-decoration: none;
+  display:inline-block;
+  line-height: 6vh;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+.Navbar-li a{
+  color:black;
+  text-decoration: none;
+}
+
+.Navbar-li a:hover {
+  color:black;
+  text-decoration: underline;
+}
+
+
+.Navbar-li a:focus {
+  text-decoration: underline;
+}
+
+
+

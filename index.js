@@ -1,9 +1,8 @@
 const express = require('express');
 const app = express();
+const path = require('path');
 
-app.get('/', (req, res, next) => {
-  res.send('hello world')
-})
+app.use('/', express.static(path.join(__dirname, 'client/build')));
 
 app.listen(8888, () => {
   console.log('listening on port 8888');

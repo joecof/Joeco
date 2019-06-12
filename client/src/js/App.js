@@ -1,8 +1,11 @@
 import React from 'react';
-import logo from '../img/joeco.png';
+
+import {Route, Switch} from "react-router-dom";
+
 
 import Banner from './Banner';
 import Navbar from './Navbar';
+import ShopItemContainer from './ShopItemContainer';
 import Footer from './Footer';
 
 
@@ -13,55 +16,14 @@ function App() {
     <div className="App">
       <Banner />
       <Navbar /> 
-
+      <Switch> 
+       <Route exact path = '/' component = {ShopItemContainer} />
+      </Switch>
       
-      <img src={logo} className="App-logo" alt="logo" /> 
-      <h1> Under Construction: Joeco's Portfolio </h1>  
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
+      
+
+      <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+      
       <Footer />
     
     </div>

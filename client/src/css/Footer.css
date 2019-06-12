@@ -5,10 +5,11 @@
   color: black;
   border-top: 1px solid black;
   text-align: center;
-  position: fixed;
-  left: 0;
-  bottom: 0;
+
   width: 100vw;
+
+  height: 40px;
+  clear:both;
 }
 
 .Footer-item {

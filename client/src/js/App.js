@@ -16,14 +16,11 @@ function App() {
     <div className="App">
       <Banner />
       <Navbar /> 
+
       <Switch> 
        <Route exact path = '/' component = {ShopItemContainer} />
       </Switch>
-      
-      
-
-      {/* <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/> */}
-      
+            
       <Footer />
     
     </div>

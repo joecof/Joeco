@@ -1,16 +1,19 @@
 import React, { Component } from 'react'
 import '../css/Navbar.css';
-import { BrowserRouter as Router, Switch, Route, Link, NavLink } from 'react-router-dom';
+import { BrowserRouter as NavLink } from 'react-router-dom';
 
 
 export default class Navbar extends Component {
+
   render() {
+
+
     return (
       <div className = "Navbar">
         <ul className="Navbar-ul">
           <li className = "Navbar-li">
             <NavLink 
-              to={'/'} 
+              to={'/about'} 
               className="Navbar-about"
               activeClassName="active"> 
                 ABOUT 
@@ -18,7 +21,7 @@ export default class Navbar extends Component {
           </li>
           <li className = "Navbar-li">
             <NavLink 
-              to={'/contact'} 
+              to={'/'} 
               className="Navbar-resume"
               activeClassName="active">  
                 RESUME 

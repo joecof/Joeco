@@ -11,7 +11,7 @@ export default class ShopItem extends Component {
   render() {
     return (
       <div className = "ShopItem">
-        <p>Shop Item</p>
+        <p> Project Item </p>
         <a> Add To Cart </a>
       </div>
     )

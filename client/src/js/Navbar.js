@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../css/Navbar.css';
-import { BrowserRouter as NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link, NavLink } from 'react-router-dom';
 
 
 export default class Navbar extends Component {
@@ -15,15 +15,24 @@ export default class Navbar extends Component {
             <NavLink 
               to={'/about'} 
               className="Navbar-about"
-              activeClassName="active"> 
+              activeClassName="active"
+              activeStyle={{
+                textDecoration: "underline",
+                color: "black"
+              }}>   
                 ABOUT 
             </NavLink>
           </li>
           <li className = "Navbar-li">
             <NavLink 
-              to={'/'} 
+              exact to={'/'} 
               className="Navbar-resume"
-              activeClassName="active">  
+              activeClassName="active"
+              activeStyle={{
+                textDecoration: "underline",
+                color: "black"
+              }}>  
+              
                 RESUME 
             </NavLink>
           </li>
@@ -31,7 +40,11 @@ export default class Navbar extends Component {
             <NavLink 
               to={'/about'} 
               className="Navbar-cart"
-              activeClassName="active">  
+              activeClassName="active"
+              activeStyle={{
+                textDecoration: "underline",
+                color: "black"
+              }}>    
                 CART 
             </NavLink>
           </li>

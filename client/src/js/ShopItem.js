@@ -3,10 +3,6 @@ import '../css/ShopItem.css';
 
 export default class ShopItem extends Component {
 
-  componentDidMount() {
-
-  }
-
 
   render() {
     return (

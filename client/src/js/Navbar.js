@@ -7,7 +7,6 @@ export default class Navbar extends Component {
 
   render() {
 
-
     return (
       <div className = "Navbar">
         <ul className="Navbar-ul">
@@ -38,7 +37,7 @@ export default class Navbar extends Component {
           </li>
           <li className = "Navbar-li">
             <NavLink 
-              to={'/about'} 
+              to={'/cart'} 
               className="Navbar-cart"
               activeClassName="active"
               activeStyle={{

@@ -4,4 +4,42 @@
   border: 1px solid black;
   margin:20px;
   display: inline-block;
+
+  
+  /* background-image: url("../js/proj.png");
+  background-size: 600px 800px;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  opacity: 0.5; */
+}
+
+.ShopItem-AddToCart {
+  background-color: red;
+  
+  
+  border-radius: 5px;
+  border: 1px solid black;
+  font-size: 24px;
+  color: #fff;
+  font-weight: 900;
+
+  padding: 6px;
+  text-align: center;
+  text-decoration: none;
+
+  margin-top:20px;
+
+}
+
+
+
+.ShopItem-Desc {
+  margin-top:50px;
+  /* border: 1px solid black; */
+  height: 400px;
+
+  font-size: 24px;
+  color: black;
+  font-weight: 900;
 }

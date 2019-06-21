@@ -1,10 +1,9 @@
 .Footer {
   justify-content:space-between;
-
   border-top: 1px solid white;
   background-color:black;
-
   margin-top:40px;
+  margin-bottom: 0px;
   left: 0;
   bottom: 0;
   width: 100%;

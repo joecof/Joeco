@@ -15,9 +15,9 @@ function App() {
   return (
     <div className="App">
       <Banner />
-      <Navbar /> 
+      <Navbar />
       <Switch> 
-       <Route exact path = '/admin' component = {BodyContainer} />
+       <Route exact path = '/' component = {ShopItemContainer} />
       </Switch>
       <Footer />
     

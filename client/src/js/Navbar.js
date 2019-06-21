@@ -31,7 +31,6 @@ export default class Navbar extends Component {
                 textDecoration: "underline",
                 color: "black"
               }}>  
-              
                 RESUME 
             </NavLink>
           </li>

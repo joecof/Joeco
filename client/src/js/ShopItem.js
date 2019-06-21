@@ -10,9 +10,13 @@ export default class ShopItem extends Component {
     return (
       <div className = "ShopItem">
         <div className = "ShopItem-Desc"> 
+
+          <p>{this.props.projectName}</p>
           <p>{this.props.skill1}</p>
           <p>{this.props.skill2}</p>
           <p>{this.props.skill3}</p>
+          <p>{this.props.projectLink}</p>
+
         </div>
         <NavLink
           exact to = "/cart"

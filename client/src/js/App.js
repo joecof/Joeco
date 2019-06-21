@@ -2,11 +2,10 @@ import React from 'react';
 
 import {Route, Switch} from "react-router-dom";
 
-
 import Banner from './Banner';
 import Navbar from './Navbar';
 import ShopItemContainer from './ShopItemContainer';
-import Login from './Login';
+import BodyContainer from './BodyContainer';
 import Footer from './Footer';
 
 
@@ -17,12 +16,9 @@ function App() {
     <div className="App">
       <Banner />
       <Navbar /> 
-
       <Switch> 
-       <Route exact path = '/' component = {ShopItemContainer} />
-       <Route exact path = '/admin' component = {Login} />
+       <Route exact path = '/admin' component = {BodyContainer} />
       </Switch>
-            
       <Footer />
     
     </div>

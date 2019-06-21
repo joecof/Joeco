@@ -1,0 +1,46 @@
+.Modal {
+  background-color: white;
+  border-radius: 5px;
+  margin: 0 auto;
+  width: 50%;
+  padding: 30px;
+}
+
+.Modal-form {
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 320px;
+}
+
+.Modal-label { 
+  display: block;
+  color: #2b2e4a;
+  margin-top:15px;
+
+}
+
+.Modal-input {
+  text-align: center;
+  padding: 8px;
+  width: 100%;
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid #bdc3c7;
+  border-left: 0;
+  transition: border-bottom-color .15s ease-in;
+}
+
+.Modal-button {
+  margin: 0 auto;
+  display: inline-block;
+  padding: 8px 16px;
+  margin-top:10px;
+  margin-right:10px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #3fc1c9;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color .15s ease-in;
+}

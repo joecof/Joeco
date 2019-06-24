@@ -1,0 +1,37 @@
+
+
+.Menu {
+  top: 50%;
+  left: 50%;
+  width:30em;
+  height:18em;
+  margin-top: -9em; /*set to a negative number 1/2 of your height*/
+  margin-left: -15em; /*set to a negative number 1/2 of your width*/
+  position:fixed;
+}
+
+
+.Menu-ul {
+  list-style-type: none;
+  padding: 0px;
+}
+
+.Menu-li {
+  margin:10px; 
+  font-size: 1.3em;
+  text-decoration: none;
+}
+
+.Menu-li a{
+  color:black;
+  text-decoration: none;
+}
+
+.Menu-li a:hover {
+  color:black;
+  text-decoration: underline;
+}
+
+.Menu-li a:focus {
+  text-decoration: underline;
+}

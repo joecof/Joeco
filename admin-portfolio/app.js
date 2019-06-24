@@ -24,6 +24,6 @@ app.get('/', (req, res, next) => {
 //Serve Build File 
 // app.use('/', express.static(path.join(__dirname, 'client/build')));
 
-app.listen(3001, () => {
-  console.log('listening on port 3001');
+app.listen(4001, () => {
+  console.log('listening on port 4001');
 })

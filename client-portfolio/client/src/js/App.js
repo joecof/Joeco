@@ -5,7 +5,6 @@ import {Route, Switch} from "react-router-dom";
 import Banner from './Banner';
 import Navbar from './Navbar';
 import ShopItemContainer from './ShopItemContainer';
-import BodyContainer from './BodyContainer';
 import Footer from './Footer';
 
 

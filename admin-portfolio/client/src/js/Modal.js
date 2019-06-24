@@ -3,9 +3,6 @@ import '../css/Modal.css'
 
 export default class Modal extends Component {
 
-  constructor() {
-    super();
-  }
   render() {
 
     return (

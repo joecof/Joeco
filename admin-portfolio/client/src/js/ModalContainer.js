@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import '../css/ModalContainer.css';
 
-import ShopItem from './ShopItem';
 import Modal from './Modal';
 
 export default class ModalContainer extends Component {
@@ -102,26 +101,9 @@ export default class ModalContainer extends Component {
 
   render() {
 
-    let project = [];
-
-    for (var i = 0; i < this.state.projectNum; i += 1) {
-      project.push(
-        <ShopItem 
-          key={i} 
-          number={i} 
-          projectName = {this.state.value1}  
-          skill1 = {this.state.value2}  
-          skill2 = {this.state.value3}  
-          skill3 = {this.state.value4}  
-          projectLink = {this.state.value5}  
-        />
-      );
-    };
-
     return (
       <div className = "ModalContainer">
         <div className = "ModalContainer-Box">
-         <div className="box-container"> { project } </div>
 
           <Modal 
             tempFetch = { this.tempFetch }

@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import '../css/ShopItemContainer.css'
 
 import ShopItem from './ShopItem'
-import Modal from './Modal'
 
 export default class ShopItemContainer extends Component {
 

@@ -1,7 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const app = express();
 const path = require('path');
+
+const app = express();
 
 const feedRoutes = require('./routes/feed');
 
@@ -16,9 +17,13 @@ app.use((req, res, next) => {
 
 app.use('/feed', feedRoutes);
 
-//Serve Build File 
-app.use('/', express.static(path.join(__dirname, 'client/build')));
+app.get('/', (req, res, next) => {
+  res.send('Can you See ? ');
+})
 
-app.listen(8888, () => {
-  console.log('listening on port 8888');
+//Serve Build File 
+// app.use('/', express.static(path.join(__dirname, 'client/build')));
+
+app.listen(3001, () => {
+  console.log('listening on port 3001');
 })

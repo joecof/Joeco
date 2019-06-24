@@ -61,7 +61,7 @@ export default class ShopItemContainer extends Component {
           <button 
             onClick = { () => {
             this.addProject();
-            fetch('http://localhost:8888/feed/post', {
+            fetch('http://localhost:3001/feed/post', {
               method: 'POST', 
               body: JSON.stringify({
                 projectName: 'Operation Regen',

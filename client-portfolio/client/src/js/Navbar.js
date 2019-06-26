@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../css/Navbar.css';
-import { BrowserRouter as Router, Switch, Route, Link, NavLink } from 'react-router-dom';
+import { BrowserRouter as Link, NavLink } from 'react-router-dom';
 
 
 export default class Navbar extends Component {

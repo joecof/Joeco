@@ -1,17 +1,19 @@
 import React, { Component } from 'react'
-import '../css/ShopItemContainer.css'
+import '../css/ItemView.css'
 
-import ShopItem from './ShopItem'
+import Item from './Item'
 
-export default class ShopItemContainer extends Component {
+export default class ItemView extends Component {
 
   constructor() {
     super(); 
 
     this.state = { 
       totalProjects: 0,
-      posts: []
+      posts: [],
+      itemView: true
     }
+
     this.loadProjects = this.loadProjects.bind(this);
   }
 
@@ -41,11 +43,10 @@ export default class ShopItemContainer extends Component {
   render() {
 
     return (
-      <div className = "ShopItemContainer">
-        <div className = "ShopItemContainer-Box">
-          
+      <div className = "ItemView">
+        <div className = "ItemView-Box">
         {this.state.posts.map(post => (
-          <ShopItem
+          <Item
             key={post._id}
             id={post._id}
             name={post.name}
@@ -53,6 +54,7 @@ export default class ShopItemContainer extends Component {
             skill2={post.skill2}
             skill3={post.skill3}
             link={post.link}
+            itemView = {this.state.itemView}
           />
         ))}
 

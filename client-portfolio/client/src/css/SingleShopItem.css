@@ -1,14 +1,13 @@
-.ShopItem {
+.SingleShopItem {
   height: 500px;
   width: 350px; 
   border: 1px solid black;
   margin:0 auto;
   margin-top: 50px;
   display: inline-block;
-  margin: 20px;
 }
 
-.ShopItem-AddToCart {
+.SingleShopItem-AddToCart {
   background-color: red;
   border-radius: 5px;
   border: 1px solid black;
@@ -20,7 +19,9 @@
   text-decoration: none;
 }
 
-.ShopItem-Desc {
+
+
+.SingleShopItem-Desc {
   height: 380px;
   font-size: 24px;
   color: black;

@@ -23,7 +23,7 @@ export default class ShopItem extends Component {
 
         </div>
         <NavLink
-          exact to = { this.props.id }
+          exact to = {'/cart/' + this.props.id}
           className = "ShopItem-AddToCart"
         > 
           Add To Cart 

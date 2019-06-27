@@ -20,7 +20,7 @@ function App() {
       <Switch> 
        <Route exact path = '/' component = {ShopItemContainer} />
        <Route
-          exact path="/:postId"
+          exact path="/cart/:postId"
           render={props => (
             <SingleShopItem
               {...props}

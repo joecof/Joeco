@@ -8,18 +8,6 @@
   margin: 20px;
 }
 
-.Item-AddToCart {
-  background-color: red;
-  border-radius: 5px;
-  border: 1px solid black;
-  font-size: 24px;
-  color: #fff;
-  font-weight: 900;
-  padding: 6px;
-  text-align: center;
-  text-decoration: none;
-}
-
 .Item-Desc {
   height: 380px;
   font-size: 24px;

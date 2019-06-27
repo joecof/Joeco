@@ -94,3 +94,38 @@ exports.deletePost = (req, res, next) => {
       next(err);
     })
 }
+
+exports.updatePost = (req, res, next ) => {
+  const postId = req.params.postId;
+
+  const name = req.body.name;
+  const skill1 = req.body.skill1; 
+  const skill2 = req.body.skill2;
+  const skill3 = req.body.skill3;
+  const link = req.body.link;
+
+  Post
+    .findById(postId)
+    .then(post => {
+      if(!post) {
+        const error = new Error('Could not find post');
+        error.statusCode = 404;
+        throw error;
+      }
+      post.name = name;
+      post.skill1 = skill1; 
+      post.skill2 = skill2;
+      post.skill3 = skill3;
+      post.link = link;
+      return post.save();
+    })
+    .then(result => {
+      res.status(200).json({message: 'Post updated', post: result}  );
+    })
+    .catch(err => {
+      if(!err.statusCode) {
+        err.statusCode = 500;
+      }
+      next(err);
+    })
+} 

@@ -1,0 +1,64 @@
+.EditItem {
+  height: 500px;
+  width: 350px; 
+  border: 1px solid black;
+  margin:0 auto;
+  margin-top: 50px;
+  display: inline-block;
+}
+
+.EditItem-AddToCart {
+  background-color: red;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-size: 24px;
+  color: #fff;
+  font-weight: 900;
+  padding: 6px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.EditItem-Desc {
+  height: 300px;
+  font-size: 22px;
+  color: black;
+  font-weight: 900;
+}
+
+.EditItem-form {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.EditItem-label { 
+  display: block;
+  color: #2b2e4a;
+  margin-top:15px;
+}
+
+.EditItem-input {
+  text-align: center;
+  /* padding: 8px; */
+  /* width: 100%; */
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid #bdc3c7;
+  border-left: 0;
+  transition: border-bottom-color .15s ease-in;
+}
+
+.EditItem-button {
+  margin: 0 auto;
+  display: inline-block;
+  /* padding: 8px 16px;
+  margin-top:10px;
+  margin-right:10px; */
+  font-size: 16px;
+  color: #fff;
+  background-color: #3fc1c9;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color .15s ease-in;
+}

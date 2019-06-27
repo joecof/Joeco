@@ -7,10 +7,12 @@ import Banner from './Banner';
 import Menu from './Menu';
 import Modal from './Modal';
 import DeleteItemView from './DeleteItemView';
-import ItemView from './ItemView';
-import SingleItem from './SingleItem';
-import ViewItem from './ViewItem';
+import EditItemView from './EditItemView';
+import ViewItemView from './ViewItemView';
 
+import DeleteItem from './DeleteItem';
+import ViewItem from './ViewItem';
+import EditItem from './EditItem';
 
 
 
@@ -22,27 +24,35 @@ function App() {
         <Route exact path = '/' component = {Menu} />
         <Route exact path = '/add' component = {Modal} />
         <Route exact path = '/delete' component = {DeleteItemView} />
-        <Route exact path = '/view' component = {ItemView} />
+        <Route exact path = '/edit' component = {EditItemView} />
+        <Route exact path = '/view' component = {ViewItemView} />
 
         <Route
           exact path="/delete/:postId"
           render={props => (
-            <SingleItem
+            <DeleteItem
               {...props}
             />
           )}
         />
 
-          <Route
-            exact path="/view/:postId"
-            render={props => (
-              <ViewItem
-                {...props}
-              />
-            )}
+        <Route
+          exact path="/edit/:postId"
+          render={props => (
+            <EditItem
+              {...props}
+            />
+          )}
         />
 
-
+        <Route
+          exact path="/view/:postId"
+          render={props => (
+            <ViewItem
+              {...props}
+            />
+          )}
+        />
 
       </Switch>
 

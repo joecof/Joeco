@@ -13,7 +13,10 @@ router.post('/post', feedController.postPost);
 //GET SINGLE POST
 router.get('/post/:postId', feedController.getPost);
 
-
+//DELETE SINGLE POST 
 router.delete('/post/:postId', feedController.deletePost);
+
+//UPDATE SINGLE POST
+router.put('/post/:postId', feedController.updatePost);
 
 module.exports = router; 

@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
-import '../css/ItemView.css'
+import '../css/EditItemView.css'
 
 import Item from './Item'
 
-export default class ItemView extends Component {
+export default class EditItemView extends Component {
+  _isMounted = false;
+
 
   constructor() {
     super(); 
@@ -11,7 +13,8 @@ export default class ItemView extends Component {
     this.state = { 
       totalProjects: 0,
       posts: [],
-      itemView: true
+      view: 2,
+      edited: true
     }
 
     this.loadProjects = this.loadProjects.bind(this);
@@ -26,10 +29,13 @@ export default class ItemView extends Component {
         return res.json();
       })
       .then(resData => {
-        this.setState({
-          totalProjects: resData.posts.length,
-          posts: resData.posts
-        });
+        if(this._isMounted) {
+          this.setState({
+            totalProjects: resData.posts.length,
+            posts: resData.posts
+          });
+        }
+
       })
       .catch(err => {
         console.log(err);
@@ -37,14 +43,21 @@ export default class ItemView extends Component {
   }
 
   componentDidMount() {
+    this._isMounted = true;
     this.loadProjects();
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
   }
 
   render() {
 
+    this.loadProjects();
+
     return (
-      <div className = "ItemView">
-        <div className = "ItemView-Box">
+      <div className = "EditItemView">
+        <div className = "EditItemView-Box">
         {this.state.posts.map(post => (
           <Item
             key={post._id}
@@ -54,7 +67,7 @@ export default class ItemView extends Component {
             skill2={post.skill2}
             skill3={post.skill3}
             link={post.link}
-            itemView = {this.state.itemView}
+            view = {this.state.view}
           />
         ))}
 

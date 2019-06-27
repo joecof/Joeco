@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Link, NavLink } from 'react-router-dom';
 
-import '../css/SingleItem.css'
+import '../css/DeleteItem.css'
 
 
-export default class SingleItem extends Component {
+export default class DeleteItem extends Component {
 
   constructor() {
     super();
@@ -70,11 +70,11 @@ export default class SingleItem extends Component {
 
     return (
 
-      <div className = "SingleItem">
+      <div className = "DeleteItem">
 
         <h1> This item has been successfully deleted </h1>
 
-        <div className = "SingleItem-Desc"> 
+        <div className = "DeleteItem-Desc"> 
 
           <p>{this.state.name}</p>
           <p>{this.state.skill1}</p>
@@ -86,7 +86,7 @@ export default class SingleItem extends Component {
 
         <NavLink
           exact to = "/" 
-          className = "SingleItem-AddToCart"
+          className = "DeleteItem-AddToCart"
         > 
           Back to main 
         </NavLink>

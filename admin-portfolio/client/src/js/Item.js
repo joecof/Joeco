@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import '../css/Item.css';
 
-import { BrowserRouter as Link, NavLink } from 'react-router-dom';
+import CrudAction from './CrudAction'
 
 export default class Item extends Component {
   constructor() {
@@ -10,11 +10,36 @@ export default class Item extends Component {
 
   render() {
 
+    let link;
+
+    switch(this.props.view) {
+      case 1: 
+        link =  <CrudAction 
+          id = { this.props.id }
+          type = 'delete'
+          linkName = 'Delete Item'
+        />
+        break;
+      case 2: 
+        link =  <CrudAction 
+          id = { this.props.id }
+          type = 'edit'
+          linkName = 'Edit Item'
+        />
+        break;
+      case 3: 
+        link =  <CrudAction 
+          id = { this.props.id }
+          type = 'view'
+          linkName = 'View Item'
+        />
+        break;
+    }
+
     return (
       
       <div className = "Item">
         <div className = "Item-Desc"> 
-
           <p>{this.props.name}</p>
           <p>{this.props.skill1}</p>
           <p>{this.props.skill2}</p>
@@ -23,20 +48,8 @@ export default class Item extends Component {
 
         </div>
 
-        { (this.props.itemView) ? 
-          <NavLink
-            exact to = {'/view/' + this.props.id}
-            className = "Item-AddToCart"
-          > 
-            View Item
-          </NavLink> : 
-          <NavLink
-            exact to = {'/delete/' + this.props.id}
-            className = "Item-AddToCart"
-          > 
-            Delete Item
-          </NavLink>
-        }
+        { link }
+        
       </div>
     )
   }

@@ -1,19 +1,19 @@
 import React, { Component } from 'react'
-import '../css/DeleteItemView.css'
+import '../css/ViewItem.css'
 
 import Item from './Item'
 
-export default class DeleteItemView extends Component {
+export default class ViewItemView extends Component {
 
   constructor() {
     super(); 
 
     this.state = { 
       totalProjects: 0,
-      posts: [], 
-      view: 1
-
+      posts: [],
+      view: 3,
     }
+
     this.loadProjects = this.loadProjects.bind(this);
   }
 
@@ -43,9 +43,8 @@ export default class DeleteItemView extends Component {
   render() {
 
     return (
-      <div className = "DeleteItemView">
-        <div className = "DeleteItemView-Box">
-          
+      <div className = "ViewItemView">
+        <div className = "ViewItemView-Box">
         {this.state.posts.map(post => (
           <Item
             key={post._id}
@@ -55,7 +54,7 @@ export default class DeleteItemView extends Component {
             skill2={post.skill2}
             skill3={post.skill3}
             link={post.link}
-            view={this.state.view}
+            view = {this.state.view}
           />
         ))}
 

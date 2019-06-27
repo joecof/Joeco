@@ -1,4 +1,4 @@
-.SingleItem {
+.DeleteItem {
   height: 500px;
   width: 350px; 
   border: 1px solid black;
@@ -7,7 +7,7 @@
   display: inline-block;
 }
 
-.SingleItem-AddToCart {
+.DeleteItem-AddToCart {
   background-color: red;
   border-radius: 5px;
   border: 1px solid black;
@@ -19,9 +19,7 @@
   text-decoration: none;
 }
 
-
-
-.SingleItem-Desc {
+.DeleteItem-Desc {
   height: 300px;
   font-size: 24px;
   color: black;

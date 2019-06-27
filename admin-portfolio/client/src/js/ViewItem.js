@@ -4,7 +4,7 @@ import { BrowserRouter as Link, NavLink } from 'react-router-dom';
 import '../css/ViewItem.css'
 
 
-export default class SingleItem extends Component {
+export default class ViewItem extends Component {
 
   constructor() {
     super();
@@ -25,7 +25,7 @@ export default class SingleItem extends Component {
     
     fetch('http://localhost:4001/feed/post/' + postId)
       .then(res => {
-        if(res.status != 200 && res.status !== 201) {
+        if(res.status !== 200 && res.status !== 201) {
           throw new Error('Could not fetch');
         }
         return res.json();

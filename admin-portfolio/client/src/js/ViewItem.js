@@ -23,7 +23,13 @@ export default class ViewItem extends Component {
   componentDidMount() {
     const postId = this.props.match.params.postId;
     
-    fetch('http://localhost:4001/feed/post/' + postId)
+    fetch('http://localhost:4001/feed/post/' + postId, {
+
+      headers: {
+        Authorization: 'Bearer ' + this.props.token
+      }
+      
+    })
       .then(res => {
         if(res.status !== 200 && res.status !== 201) {
           throw new Error('Could not fetch');
@@ -41,7 +47,9 @@ export default class ViewItem extends Component {
         })
       })
       .catch(err => {
-        console.log(err);
+        this.setState({
+          name: 'Your Not Authorized'
+        })
       })
   }
 

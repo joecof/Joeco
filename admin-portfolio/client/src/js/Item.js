@@ -4,9 +4,6 @@ import '../css/Item.css';
 import CrudAction from './CrudAction'
 
 export default class Item extends Component {
-  constructor() {
-    super();
-  }
 
   render() {
 
@@ -33,6 +30,8 @@ export default class Item extends Component {
           type = 'view'
           linkName = 'View Item'
         />
+        break;
+      default: 
         break;
     }
 

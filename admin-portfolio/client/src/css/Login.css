@@ -1,0 +1,36 @@
+.Login-form {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.Login-label { 
+  display: block;
+  color: #2b2e4a;
+  margin-top:15px;
+}
+
+.Login-input {
+  text-align: center;
+  /* padding: 8px; */
+  /* width: 100%; */
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 1px solid #bdc3c7;
+  border-left: 0;
+  transition: border-bottom-color .15s ease-in;
+}
+
+.Login-button {
+  margin: 0 auto;
+  display: inline-block;
+  padding: 8px 16px;
+  margin-top:10px;
+  margin-right:10px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #3fc1c9;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color .15s ease-in;
+}

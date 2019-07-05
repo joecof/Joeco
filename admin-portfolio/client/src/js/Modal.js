@@ -32,7 +32,7 @@ export default class Modal extends Component {
   }
 
   handleSubmit(e) {
-    // e.preventDefault();
+    e.preventDefault();
     this.setState({ 
       message: 'Sending...',
       submitted: true
@@ -47,7 +47,8 @@ export default class Modal extends Component {
     fetch(url, {
       method: method,
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + this.props.token
       },
       body: JSON.stringify({
         name: this.state.name,
@@ -85,7 +86,7 @@ export default class Modal extends Component {
 
     return (
       <div className="Modal" >
-      {/* <h1> { this.state.project.name } </h1> */}
+
       <form className = "Modal-form" onSubmit = { this.handleSubmit }> 
         <label className = "Modal-label"> Project Name </label>  <br/>
         <input className = "Modal-input" type = "text" name = "name" onChange= {this.updateInputValue}/> <br/>

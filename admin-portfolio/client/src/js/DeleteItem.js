@@ -15,19 +15,24 @@ export default class DeleteItem extends Component {
       skill2: '',
       skill3: '',
       link: '',
-      redirect: false
     }
 
     this.deletePostHandler = this.deletePostHandler.bind(this);
-
 }
 
   componentDidMount() {
     const postId = this.props.match.params.postId;
     
-    fetch('http://localhost:4001/feed/post/' + postId)
+    fetch('http://localhost:4001/feed/post/' + postId, {
+
+      headers: {
+        Authorization:'Bearer ' + this.props.token,
+        'Content-Type': 'application/json'
+      }
+      
+    })
       .then(res => {
-        if(res.status != 200 && res.status !== 201) {
+        if(res.status !== 200 && res.status !== 201) {
           throw new Error('Could not fetch');
         }
         return res.json();
@@ -45,14 +50,20 @@ export default class DeleteItem extends Component {
       .catch(err => {
         console.log(err);
       })
+
     this.deletePostHandler();
   }
 
   deletePostHandler() {
     const postId = this.props.match.params.postId;
+    let method = 'DELETE';
 
     fetch('http://localhost:4001/feed/post/' + postId, {
-      method: 'DELETE'
+      method: method,
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + this.props.token
+      }
     })
     .then(res => {
       if(res.status !== 200 && res.status !== 201) {

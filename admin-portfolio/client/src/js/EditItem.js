@@ -43,14 +43,15 @@ export default class EditItem extends Component {
   }
 
   editFormData() {
-    
     const postId = this.props.match.params.postId;
     let method = 'PUT';
 
     fetch('http://localhost:4001/feed/post/' + postId, {
       method: method,
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + this.props.token
+        
       },
       body: JSON.stringify({
         name: this.state.name,
@@ -86,7 +87,11 @@ export default class EditItem extends Component {
 
     const postId = this.props.match.params.postId;
     
-    fetch('http://localhost:4001/feed/post/' + postId)
+    fetch('http://localhost:4001/feed/post/' + postId, {
+      headers: {
+        Authorization: 'Bearer ' + this.props.token
+      }
+    })
       .then(res => {
         if(res.status !== 200 && res.status !== 201) {
           throw new Error('Could not fetch');

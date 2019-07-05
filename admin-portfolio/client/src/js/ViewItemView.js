@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import '../css/ViewItem.css'
 
+import { Redirect } from 'react-router-dom'
+
+import '../css/ViewItemView.css'
 import Item from './Item'
 
 export default class ViewItemView extends Component {
@@ -12,13 +14,18 @@ export default class ViewItemView extends Component {
       totalProjects: 0,
       posts: [],
       view: 3,
+      return: false
     }
 
     this.loadProjects = this.loadProjects.bind(this);
   }
 
   loadProjects() {
-    fetch('http://localhost:4001/feed/posts/')
+    fetch('http://localhost:4001/feed/posts/', {
+      headers: {
+        Authorization: 'Bearer ' + this.props.token
+      }
+    })
       .then(res => {
         if(res.status !== 200) {
           throw new Error('Failed to fetch status');
@@ -42,6 +49,12 @@ export default class ViewItemView extends Component {
 
   render() {
 
+    if (this.state.return) {
+      return (
+        <Redirect to= "/"/>
+      )
+    }
+
     return (
       <div className = "ViewItemView">
         <div className = "ViewItemView-Box">
@@ -57,8 +70,8 @@ export default class ViewItemView extends Component {
             view = {this.state.view}
           />
         ))}
-
         </div>
+        <button className = "ViewItemView-button" onClick = {() => this.setState({ return: true})}> Go Back </button>
       </div>
     )
   }

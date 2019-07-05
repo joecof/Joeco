@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import '../css/DeleteItemView.css'
 
+import { Redirect } from 'react-router-dom'
+
+import '../css/DeleteItemView.css'
 import Item from './Item'
 
 export default class DeleteItemView extends Component {
@@ -11,14 +13,19 @@ export default class DeleteItemView extends Component {
     this.state = { 
       totalProjects: 0,
       posts: [], 
-      view: 1
+      view: 1,
+      return: false
 
     }
     this.loadProjects = this.loadProjects.bind(this);
   }
 
   loadProjects() {
-    fetch('http://localhost:4001/feed/posts/')
+    fetch('http://localhost:4001/feed/posts/', {
+        headers: {
+          Authorization: 'Bearer ' + this.props.token
+        }
+    })
       .then(res => {
         if(res.status !== 200) {
           throw new Error('Failed to fetch status');
@@ -42,6 +49,12 @@ export default class DeleteItemView extends Component {
 
   render() {
 
+    if (this.state.return) {
+      return (
+        <Redirect to= "/"/>
+      )
+    }
+
     return (
       <div className = "DeleteItemView">
         <div className = "DeleteItemView-Box">
@@ -60,6 +73,7 @@ export default class DeleteItemView extends Component {
         ))}
 
         </div>
+        <button className = "DeleteItemView-button" onClick = {() => this.setState({ return: true})}> Go Back </button>
       </div>
     )
   }

@@ -1,3 +1,13 @@
-.Banner { 
-  text-align:center;
+@import url('https://fonts.googleapis.com/css?family=Julius+Sans+One&display=swap');
+
+.Banner {
+  background-color:white;
+  border-bottom: 1px solid black;
+}
+.Banner-title {
+  font-family: 'Julius Sans One', sans-serif;
+  font-size: 3em;
+  color: black;
+  text-align: center;
+  vertical-align: middle;
 }

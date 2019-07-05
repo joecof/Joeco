@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
 
 import {Redirect, Route, Switch, withRouter} from "react-router-dom";
+import Iframe from 'react-iframe'
+
 
 import '../css/App.css';
 
 import Banner from './Banner';
+import Home from './Home';
+
 import Menu from './Menu';
 
 import Login from './Login';
@@ -122,6 +126,9 @@ class App extends Component {
       );
       localStorage.setItem('expiryDate', expiryDate.toISOString());
       this.setAutoLogout(remainingMilliseconds);
+
+      this.props.history.replace('/');      
+
     })
     .catch(err => {
       console.log(err);
@@ -195,6 +202,16 @@ class App extends Component {
           path="/"
           exact
           render={props => (
+            <Home
+              {...props}
+            />
+          )}
+        />
+
+        <Route
+          path="/login"
+          exact
+          render={props => (
             <Login
               {...props}
               onLogin = { this.loginHandler }
@@ -214,21 +231,25 @@ class App extends Component {
         />
 
         <Redirect to = '/' />
-        
+
       </Switch>
     );
 
     if(this.state.isAuth) {
       routes = (
         <Switch>
-
-          <Route
+         <Route
             path="/"
             exact
             render={props => (
-              <Menu 
-                {...props}
-                userId={this.state.userId} token={this.state.token} />
+              // <Modal 
+              //   {...props}
+              //   userId={this.state.userId} token={this.state.token} />
+              <Iframe url="http://localhost:3000/"
+                      id="myId"
+                      className="App-iframe"
+                      display ="inline-block"
+              />
             )}
           />
           <Route
@@ -302,7 +323,8 @@ class App extends Component {
     return (
       <div className="App">
 
-        <Banner /> 
+        {(this.state.isAuth) ? <Menu logoutHandler = { this.logoutHandler }/> : <Banner /> 
+}
         { routes }
     
       </div>      

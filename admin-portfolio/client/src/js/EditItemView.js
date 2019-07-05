@@ -84,7 +84,7 @@ export default class EditItemView extends Component {
           />
         ))}
         </div>
-        <button className = "EditItemView-button" onClick = {() => this.setState({ return: true})}> Go Back </button>
+        {/* <button className = "EditItemView-button" onClick = {() => this.setState({ return: true})}> Go Back </button> */}
       </div>
     )
   }

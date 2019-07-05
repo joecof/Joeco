@@ -8,7 +8,7 @@ export default class Banner extends Component {
 
     return (
       <div className = "Banner">
-        <h1> Admin </h1>
+        <p className = "Banner-title"> JOECO </p>
       </div>
     )
   }

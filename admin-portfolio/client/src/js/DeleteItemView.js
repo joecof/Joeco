@@ -73,7 +73,7 @@ export default class DeleteItemView extends Component {
         ))}
 
         </div>
-        <button className = "DeleteItemView-button" onClick = {() => this.setState({ return: true})}> Go Back </button>
+        {/* <button className = "DeleteItemView-button" onClick = {() => this.setState({ return: true})}> Go Back </button> */}
       </div>
     )
   }

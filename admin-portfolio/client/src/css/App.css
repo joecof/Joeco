@@ -2,4 +2,11 @@
   text-align: center;
 }
 
-
+.App-iframe {
+  width: 1300px;
+  height: 1000px;
+  margin-left: 400px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  /* padding: 0px 10px; */
+  display: inline-block;
+}

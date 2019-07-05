@@ -16,7 +16,11 @@ export default class ShopItemContainer extends Component {
   }
 
   loadProjects() {
-    fetch('http://localhost:4001/feed/posts/')
+    fetch('http://localhost:4001/feed/posts/', {
+      headers: {
+        Authorization: 'Bearer ' + this.props.token
+      }
+    })
       .then(res => {
         if(res.status !== 200) {
           throw new Error('Failed to fetch status');
